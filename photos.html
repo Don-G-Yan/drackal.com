@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Photography — Drackal.com</title>
+    <meta name="description" content="A curated collection of creative landscape photography, developed as arguments about perception, time, and attention. By Don Yan.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <nav class="site-nav">
+        <div class="nav-container">
+            <div class="nav-brand">Drackal<span>.</span>com</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="photos.html" class="active">Photos</a></li>
+                <li><a href="essays.html">Essays</a></li>
+                <li><a href="index.html#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <header class="page-header">
+        <div class="page-header-label">Portfolio</div>
+        <h1 class="page-header-title">Creative Photography</h1>
+        <p class="page-header-desc">
+            You don't take a photograph, you make it.    — Ansel Adams.
+        </p>
+    </header>
+
+    <!-- ===== PHOTO GRID ===== -->
+    <section class="photo-grid-section">
+        <div class="container-wide">
+            <div class="photo-grid">
+
+                <article class="photo-card">
+                    <img src="assets/images/photo-01.jpg" alt="Decision in the Morning Dawn">
+                    <div class="photo-caption">
+                        <h4>Decision in the Morning Dawn</h4>
+                        <p>Waiting for light is not passive, but an active act of sculpting.</p>
+                        <div class="photo-meta">Tibetan Plateau, China · 2017 · f/8 · 1/125s · ISO 90</div>
+                    </div>
+                </article>
+
+                <article class="photo-card">
+                    <img src="assets/images/photo-02.jpg" alt="The Light of the Canyon">
+                    <div class="photo-caption">
+                        <h4>The Light of the Canyon</h4>
+                        <p>To walk into the light is not a surrender to its glow.</p>
+                        <div class="photo-meta">Antelope Canyon, USA · 2018 · f/8.0 · 1/30s · ISO 250</div>
+                    </div>
+                </article>
+
+                <article class="photo-card">
+                    <img src="assets/images/photo-03.jpg" alt="The Gateway to the Silk Road">
+                    <div class="photo-caption">
+                        <h4>The Gateway to the Silk Road</h4>
+                        <p>To the North and South lie Snow Mountains and Deserts, while in between runs the path of Ancient Chinese.</p>
+                        <div class="photo-meta">Hexi Corridor, China · 2016 · f/11 · 1/200s · ISO 140</div>
+                    </div>
+                </article>
+
+                <article class="photo-card">
+                    <img src="assets/images/photo-04.jpg" alt="Light Upon the Keep">
+                    <div class="photo-caption">
+                        <h4>Light Upon the Keep</h4>
+                        <p>To outlast the storm and to let it carve your stillness.</p>
+                        <div class="photo-meta">Eilean Donan Castle, Scotland · 2013 · f/7.1 · 1/200s · ISO 200</div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="container">
+            <p class="footer-text">
+                © 2026 Don (Guanzhen) Yan · All photographs are original work unless otherwise noted.<br>
+                <a href="index.html">Home</a> · <a href="essays.html">Essays</a> · <a href="https://500px.com.cn/RedicentPhotography" target="_blank" rel="noopener">500px</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="">
+        <div class="lightbox-caption">Click anywhere or press ESC to close</div>
+    </div>
+
+    <script>
+        (function() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+
+            function openLightbox(src) {
+                lightboxImg.src = src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                lightboxImg.src = '';
+                document.body.style.overflow = '';
+            }
+
+            document.querySelectorAll('.photo-card img').forEach(function(img) {
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    openLightbox(this.src);
+                });
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeLightbox();
+            });
+
+            window.closeLightbox = closeLightbox;
+        })();
+    </script>
+
+</body>
+</html>
