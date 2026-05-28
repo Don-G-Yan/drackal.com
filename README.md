@@ -1,2 +1,2 @@
-# CDL-series
-KCL Digital Fellows - CDL Series
+# drackal.com
+KCL Digital Fellows -writtings
