@@ -1,2 +1,3 @@
 # drackal.com
-KCL Digital Fellows -writtings
+for KCL Digital Fellows -writtings and demo
+personal works showcase
